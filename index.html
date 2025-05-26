@@ -1,44 +1,69 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bartosz Maciejewski | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>👋 Hi, I'm Bartosz</h1>
-    <p>Computer Science Student | Specializing in Databases & Software Development</p>
+  <nav>
+    <div class="container">
+      <h1>Bartosz</h1>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h2>Hi, I'm Bartosz 👋</h2>
+    <p>Computer Science Student • Software & Database Developer</p>
   </header>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I'm currently in my 6th semester at Akademia Nauk Stosowanych in Elbląg,
-      passionate about building applications in C#, .NET, Laravel, and React.
-    </p>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a 6th-semester student at Akademia Nauk Stosowanych in Elbląg, specializing in database programming and user software development.
+        I enjoy building web and desktop applications using technologies like C#, .NET, Laravel, and React.
+      </p>
+    </div>
   </section>
 
-  <section class="skills">
-    <h2>🛠 Skills</h2>
-    <ul>
-      <li>C# / .NET</li>
-      <li>React / JavaScript</li>
-      <li>Laravel / PHP</li>
-      <li>MySQL / SQLite</li>
-      <li>Git / GitHub</li>
-    </ul>
+  <section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Project 1" />
+          <h3>Recipe Planner App</h3>
+          <p>React Native app for planning daily meals using a calendar and custom product database.</p>
+          <a href="https://github.com/bartoszmaciejewski/recipe-planner">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Movie Review Site</h3>
+          <p>Laravel + SQLite website for rating movies, managing users and comments.</p>
+          <a href="https://github.com/bartoszmaciejewski/movie-site">View on GitHub</a>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </div>
   </section>
 
-  <section class="projects">
-    <h2>📂 Projects</h2>
-    <p>Check out my work on <a href="https://github.com/bartoszmaciejewski" target="_blank">GitHub</a>.</p>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out via <a href="mailto:your.email@example.com">email</a> or connect on <a href="https://www.linkedin.com/in/bartosz-maciejewski-0b1041341/">LinkedIn</a>.</p>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Bartosz Maciejewski • <a href="https://www.linkedin.com/in/bartosz-maciejewski-0b1041341/">LinkedIn</a></p>
+    <div class="container">
+      <p>&copy; 2025 Bartosz Maciejewski</p>
+    </div>
   </footer>
 </body>
 </html>
-
