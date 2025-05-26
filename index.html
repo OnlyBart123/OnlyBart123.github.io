@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,16 +53,34 @@
       list-style: none;
       display: flex;
       gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      position: relative;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
+      padding: 10px 15px;
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .hero {
@@ -156,14 +175,14 @@
   </header>
 
   <section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>
-      I'm a 6th-semester Computer Science student at Akademia Nauk Stosowanych in Elbląg, specializing in database programming and user software development.
-      Previously, I worked as a waiter, which honed my communication and multitasking skills. Now, I'm channeling that experience into the IT field, focusing on building efficient and user-friendly applications.
-    </p>
-  </div>
-</section>
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a 6th-semester Computer Science student at Akademia Nauk Stosowanych in Elbląg, specializing in database programming and user software development.
+        Previously, I worked as a waiter, which honed my communication and multitasking skills. Now, I'm channeling that experience into the IT field, focusing on building efficient and user-friendly applications.
+      </p>
+    </div>
+  </section>
 
   <section id="projects">
     <div class="container">
