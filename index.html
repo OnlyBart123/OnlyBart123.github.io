@@ -26,13 +26,14 @@
       background-color: var(--primary);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
       width: 90%;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 20px 0;
+      padding: 20px 15px;
     }
 
     nav {
@@ -99,9 +100,17 @@
       width: 100%;
     }
 
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--text);
+      cursor: pointer;
+      padding: 10px;
+    }
+
     .hero {
       background: linear-gradient(to right, #4db5ff, #1e90ff);
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
@@ -116,7 +125,7 @@
     }
 
     section {
-      padding: 60px 0;
+      padding: 40px 0;
     }
 
     h2 {
@@ -177,74 +186,23 @@
       color: #1e90ff;
     }
 
-    .contact-form {
-      max-width: 600px;
-      margin: 20px auto;
-      background: var(--secondary);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contact-form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid var(--muted);
-      border-radius: 5px;
-      background: var(--primary);
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 5px rgba(77, 181, 255, 0.5);
-    }
-
-    .contact-form button {
-      background: var(--accent);
-      color: var(--text);
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: #1e90ff;
-      transform: translateY(-2px);
-    }
-
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
       color: var(--text);
-      font-size: 1.5rem;
+      font-size: 2rem;
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .social-links a:hover {
       color: var(--accent);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     footer {
@@ -256,25 +214,104 @@
     }
 
     @media (max-width: 768px) {
+      nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       nav ul {
-        gap: 15px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        padding: 10px 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
       }
 
       nav a {
         font-size: 1rem;
-        padding: 10px 12px;
+        padding: 10px;
+        display: block;
+      }
+
+      .hero {
+        padding: 40px 15px;
       }
 
       .hero h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .hero p {
         font-size: 1rem;
       }
 
+      section {
+        padding: 30px 0;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
       .project-grid {
         grid-template-columns: 1fr;
+      }
+
+      .project-card img {
+        height: 150px;
+      }
+
+      .social-links {
+        gap: 20px;
+      }
+
+      .social-links a {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .project-card {
+        padding: 15px;
+      }
+
+      .project-card img {
+        height: 120px;
+      }
+
+      .social-links a {
+        font-size: 1.5rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -283,6 +320,7 @@
   <nav>
     <div class="container">
       <h1>Bartosz Maciejewski</h1>
+      <span class="hamburger"><i class="fas fa-bars"></i></span>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -336,15 +374,6 @@
     <div class="container">
       <h2>Contact Me</h2>
       <p>Reach out to discuss projects, collaborations, or opportunities!</p>
-      <form class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required />
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
       <div class="social-links">
         <a href="mailto:BartoszMaciejewski123@wp.pl" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/bartosz-maciejewski-0b1041341/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -358,5 +387,11 @@
       <p>© 2025 Bartosz Maciejewski</p>
     </div>
   </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
