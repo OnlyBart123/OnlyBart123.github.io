@@ -29,10 +29,7 @@ ul {
   padding: 0;
 }
 
-ul li::before {
-  content: "✓ ";
-  color: green;
-}
+/* Removed ul li::before to eliminate green checkmarks */
 
 footer {
   text-align: center;
